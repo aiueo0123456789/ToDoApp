@@ -1,0 +1,66 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgb(81, 81, 81);
+}
+
+* {
+  border-radius: 4px;
+  color: var(--subColor);
+}
+
+button {
+  cursor: pointer;
+  color: var(--baseColor);
+  border-color: light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+}
+
+.DoListItem {
+  display: grid;
+  grid-template-columns: 20px 24px 1fr auto auto;
+  width: 100%;
+  align-items: center;
+}
+
+/* title */
+.DoListItem h4 {
+  text-align: left;
+  color: var(--subColor);
+}
+/* deleteBtn */
+.DoListItem button {
+  background-color: rgba(0, 0, 0, 0);
+  color: red;
+  border-width: 0px;
+}
+.DoListItem span {
+  color: var(--baseColor);
+  font-weight: 900;
+}
+.active {
+  background-color: rgb(150, 150, 150);
+}
+.inactive {
+  background-color: var(--baseColor);
+}
+
+select {
+  color: var(--baseColor);
+}
+
+input {
+  color: var(--baseColor);
+}
+
+ul{
+  padding-left:0;
+  overflow: hidden;
+}
+
+li{
+  list-style:none;
+  border-radius: 0;
+}
+
