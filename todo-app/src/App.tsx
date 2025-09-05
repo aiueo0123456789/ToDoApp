@@ -15,28 +15,25 @@ class ToDoBlock {
   }
 }
 
-// 子コンポーネント: 入力フォーム
 function TitleInput({value, onChange}: {value: string; onChange: (v: string) => void;}) {
   return (
     <input
       placeholder="タスク名"
       style={{borderBottomRightRadius: 0, borderTopRightRadius: 0}}
       type=""
-      value={value} // 親の state を反映
-      onChange={(e) => onChange(e.target.value)} // 親の setState を呼ぶ
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
     />
   );
 }
 
-// 子コンポーネント: ボタン
 function AddBtn({ doTitle, option1, option2, list, setDoList }: { doTitle: string, option1: string, option2: string, list: ToDoBlock[], setDoList: (v: ToDoBlock[]) => void;}) {
   const submit = () => {
-    setDoList([...list, new ToDoBlock(doTitle, option1, option2)]); // 配列をコピーして新しい要素を追加
+    setDoList([...list, new ToDoBlock(doTitle, option1, option2)]);
   };
   return <button style={{borderBottomLeftRadius: 0, borderTopLeftRadius: 0}} onClick={submit}>追加</button>;
 }
 
-// 子コンポーネント: ラジオ
 function TaskOption1({ selected, onChange }: { selected: string; onChange: (v: string) => void }) {
   return <div>
           Priority:
@@ -58,8 +55,8 @@ function TaskOption2({value, onChange}: {value: string; onChange: (v: string) =>
   return <label>
           Category
           <select
-            value={value} // 選択状態を state で管理
-            onChange={(e) => onChange(e.target.value)} // 変更時に更新
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
           >
             <option value="仕事">仕事</option>
             <option value="趣味">趣味</option>
@@ -87,7 +84,7 @@ function DoListViewer({list, setDoList, filter}: {list: ToDoBlock[]; setDoList: 
               <p>{data.category}</p>
               <button onClick={
                 () => {
-                  setDoList(list.filter((_, i) => i !== index)); // index 以外を残す
+                  setDoList(list.filter((_, i) => i !== index));
                 }
               }>×</button>
             </li>;
